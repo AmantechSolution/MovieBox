@@ -1,0 +1,113 @@
+nav {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  background: rgba($lightClr, 0.35);
+  backdrop-filter: blur(45px);
+  position: fixed;
+  width: 100%;
+  color: white;
+  z-index: 9999;
+  .logo {
+    width: 70px;
+    height: 70px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .menu {
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(45deg, $primaryClr, $lightblue);
+    background-size: 150%;
+    backdrop-filter: blur(55px);
+    left: 0;
+    top: 37px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      gap: 50px;
+      cursor: pointer;
+      list-style: none;
+      li {
+        transition: none;
+      }
+
+      a {
+        text-transform: uppercase;
+        font-size: 7vw;
+        &:hover {
+          text-decoration: line-through !important;
+        }
+      }
+
+      .input {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 55px;
+        @include gradientBtn($lightblue, $lightClr);
+        input {
+          height: 100%;
+          position: relative;
+          width: 75%;
+          margin: 0 auto;
+          background: rgba($lightClr, 0.85);
+          border: 1px solid rgba($lightClr, 0.15);
+          border-radius: 30px 0 0 30px;
+          outline: none;
+          padding: 0 5%;
+        }
+        button {
+          display: inline-block;
+          height: 100%;
+          width: 25%;
+
+          border: 1px solid rgba($lightClr, 0.15);
+          border-radius: 0 30px 30px 0;
+          color: $darkBlue !important;
+        }
+      }
+    }
+  }
+  .ham {
+    background: transparent;
+    cursor: pointer;
+    .menu-toggle {
+      background: none;
+      font-size: 25px;
+
+      svg {
+        color: $primaryClr;
+        stroke-width: 3px;
+      }
+    }
+  }
+}
+
+@include md {
+  li a {
+    font-size: 4vw !important;
+  }
+  .input {
+    width: 55% !important;
+
+    input {
+      width: 65% !important;
+    }
+    button {
+      width: fit-content;
+    }
+  }
+}

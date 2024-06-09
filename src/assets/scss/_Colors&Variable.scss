@@ -1,0 +1,49 @@
+$primaryClr: #2e8bc0;
+$secondryClr: #145da0;
+$darkBlue: #0c2d48;
+$lightblue: #b1d4e0;
+$lightClr: #feffff;
+$darkClr: #14202e;
+$title: 90px;
+$gradient: linear-gradient(to left, $lightblue, $primaryClr, $lightblue);
+@mixin PrimaryBtn($clr, $back, $hover) {
+  background: $back;
+  padding: 12px 35px;
+  border-radius: 5px;
+  color: $clr;
+}
+@mixin Display($content, $items) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@mixin lg() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin sm() {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+@mixin md() {
+  @media (min-width: 820px) {
+    @content;
+  }
+}
+@mixin gradientBtn($clr1, $clr2) {
+  #btn {
+    background: linear-gradient(to left, $clr1, $clr2, $clr1);
+    background-size: 180%;
+    background-position: right;
+    color: $lightClr;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background-position: left;
+    }
+  }
+}

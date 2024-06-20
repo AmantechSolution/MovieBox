@@ -49,8 +49,9 @@ const NavBar = () => {
         } ${show}`}
       >
         <nav className="container">
-          <div className="logo">
-            <img src={Logo} alt="Logo" onClick={() => navigate("/")} />
+          <div className="logo" onClick={() => navigate("/")}>
+            <img src={Logo} alt="Logo" />
+            <span>Movie Box</span>
           </div>
           <div className="menu">
             <ul className="menuItems">

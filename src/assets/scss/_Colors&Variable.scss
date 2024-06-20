@@ -6,6 +6,7 @@ $lightClr: #feffff;
 $darkClr: #14202e;
 $title: 90px;
 $gradient: linear-gradient(to left, $lightblue, $primaryClr, $lightblue);
+$gradient1: linear-gradient(-180deg, $darkBlue, $darkClr, $darkBlue);
 @mixin PrimaryBtn($clr, $back, $hover) {
   background: $back;
   padding: 12px 35px;

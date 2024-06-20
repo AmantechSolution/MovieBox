@@ -4,18 +4,20 @@ import Home from "../src/pages/Home";
 import Explore from "../src/pages/Explore";
 import Detail from "../src/pages/Detail";
 import Search from "../src/pages/Search";
-import Error from "../src/pages/Error";
+import PageNotFound from "../src/pages/PageNotFound";
 import { fetchDataFromApi } from "./utility/Api";
 import { useDispatch } from "react-redux";
-import { getApiConfigration } from "./store/homeSlices";
+import { getApiConfigration, getGenres } from "./store/homeSlices";
 import Header from "./Component/Header";
-
+import Footer from "./Component/Footer";
+import NavBar from "./Component/NavBar";
+import LocomotiveScroll from "locomotive-scroll";
 function App() {
   const dispatch = useDispatch();
-  //const { url } = useSelector((state) => state.home);
-
+  const locomotiveScroll = new LocomotiveScroll();
   useEffect(() => {
     fetchConfigData();
+    getGenresData();
   }, []);
 
   const fetchConfigData = () => {
@@ -29,17 +31,35 @@ function App() {
     });
   };
 
+  const getGenresData = async () => {
+    let promises = [];
+    let endpoint = ["movie", "tv"];
+    let allGenres = {};
+    endpoint.forEach((url) => {
+      promises.push(fetchDataFromApi(`/genre/${url}/list`));
+    });
+
+    const data = await Promise.all(promises);
+
+    data.map(({ genres }) => {
+      return genres.map((item) => (allGenres[item.id] = item));
+    });
+
+    dispatch(getGenres(allGenres));
+  };
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:mediaType/:id" element={<Detail />} />
           <Route path="/search/:query" element={<Search />} />
           <Route path="/explore/:mediaType" element={<Explore />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

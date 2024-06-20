@@ -11,6 +11,7 @@ nav {
   color: white;
   z-index: 9999;
   .logo {
+    cursor: pointer;
     width: 70px;
     height: 70px;
     img {
@@ -18,15 +19,42 @@ nav {
       height: 100%;
     }
   }
-  .menu {
+  .menu .main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li a {
+      text-transform: capitalize;
+      cursor: pointer;
+      color: $lightClr;
+      font-size: 22px !important;
+    }
+    .search {
+      pointer-events: all;
+      z-index: 99;
+      cursor: pointer;
+      font-size: 22px;
+      svg {
+        color: $lightClr;
+        stroke-width: 2px;
+      }
+    }
+  }
+  .mobilemenu {
     position: absolute;
     width: 100%;
     background: linear-gradient(45deg, $primaryClr, $lightblue);
     background-size: 150%;
     backdrop-filter: blur(55px);
     left: 0;
-    top: 37px;
-
+    top: 75px;
+    .main-menu {
+      height: 0;
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -40,6 +68,7 @@ nav {
       gap: 50px;
       cursor: pointer;
       list-style: none;
+      pointer-events: none;
       li {
         transition: none;
       }
@@ -51,63 +80,54 @@ nav {
           text-decoration: line-through !important;
         }
       }
-
-      .input {
-        position: relative;
-        width: 80%;
-        margin: 0 auto;
-        height: 55px;
-        @include gradientBtn($lightblue, $lightClr);
-        input {
-          height: 100%;
-          position: relative;
-          width: 75%;
-          margin: 0 auto;
-          background: rgba($lightClr, 0.85);
-          border: 1px solid rgba($lightClr, 0.15);
-          border-radius: 30px 0 0 30px;
-          outline: none;
-          padding: 0 5%;
-        }
-        button {
-          display: inline-block;
-          height: 100%;
-          width: 25%;
-
-          border: 1px solid rgba($lightClr, 0.15);
-          border-radius: 0 30px 30px 0;
-          color: $darkBlue !important;
-        }
-      }
     }
   }
-  .ham {
+
+  .hamberger span {
     background: transparent;
     cursor: pointer;
-    .menu-toggle {
-      background: none;
-      font-size: 25px;
+    background: none;
+    font-size: 25px;
 
-      svg {
-        color: $primaryClr;
-        stroke-width: 3px;
-      }
+    svg {
+      color: $lightClr;
+      stroke-width: 3px;
     }
   }
 }
-
+.searchInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    border: 1px solid rgba($lightClr, 0.35);
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    height: 65px;
+    pointer-events: all !important;
+    background: rgba($lightClr, 0.56);
+    z-index: 9;
+    outline: none;
+    padding: 0 2%;
+    backdrop-filter: blur(35px);
+    color: $lightClr;
+  }
+  span {
+    z-index: 9;
+    position: absolute;
+    font-size: 22px;
+    right: 2%;
+    top: 90px;
+    color: $lightClr;
+    cursor: pointer;
+  }
+}
 @include md {
   li a {
-    font-size: 4vw !important;
+    font-size: 3vw !important;
   }
-  .input {
-    width: 55% !important;
-
-    input {
-      width: 65% !important;
-    }
-    button {
-      width: fit-content;
-    }
+  .menu {
+    position: static;
   }
 }

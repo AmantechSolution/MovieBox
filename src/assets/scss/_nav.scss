@@ -1,0 +1,205 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  transition: all ease 0.5s;
+  z-index: 999;
+  &.top {
+    background: linear-gradient(
+      to left,
+      rgba($lightClr, 0.25),
+      rgba($lightblue, 0.35),
+      rgba($lightClr, 0.45)
+    );
+    background-size: 130%;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+  }
+  &.show {
+    background-color: var(--black3);
+  }
+  &.hide {
+    transform: translateY(-70px);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .logo {
+    cursor: pointer;
+    img {
+      height: 60px;
+    }
+  }
+  .menuItems {
+    list-style-type: none;
+    display: none;
+    align-items: center;
+    @include md {
+      display: flex;
+    }
+    .menuItem {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      margin: 0 15px;
+      color: $lightClr;
+      font-weight: 600;
+      position: relative;
+      &.searchIcon {
+        margin-right: 0;
+      }
+      svg {
+        font-size: 18px;
+      }
+      cursor: pointer;
+      &:hover {
+        color: $lightblue;
+      }
+    }
+  }
+
+  .mobileMenuItems {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include md {
+      display: none;
+    }
+    svg {
+      font-size: 18px;
+      color: white;
+    }
+  }
+  &.slideOut {
+    transition: slideOut 1s ease;
+    .menuItems {
+      animation: slideOut 1s ease forwards;
+      z-index: -1;
+    }
+  }
+  &.mobileView {
+    z-index: 999;
+
+    .menuItems {
+      display: flex;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background: $darkBlue;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      height: 0vh;
+      transform-origin: top;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: slide 1s ease forwards;
+      z-index: -1;
+      .menuItem {
+        font-size: 20px;
+        width: 100%;
+        height: auto;
+        padding: 15px 40px;
+        margin: 0;
+        display: flex;
+        transition: 1s ease-in-out;
+        opacity: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        animation: link 1s ease forwards;
+        animation-delay: 0.5s;
+        &:last-child {
+          display: none;
+        }
+        &:nth-child(1) {
+          animation-delay: 0.5s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+      }
+    }
+  }
+
+  .searchBar {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    animation: mobileMenu 0.8s ease forwards;
+    .searchInput {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin-top: 10px;
+      width: 100%;
+      padding: 0 2%;
+      svg {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        outline: 0;
+        border: 0;
+        border-radius: 30px 0 0 30px;
+        padding: 0 15px;
+        font-size: 14px;
+        @include md {
+          height: 60px;
+          font-size: 20px;
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes mobileMenu {
+  0% {
+    transform: translateY(-130%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 30vh;
+  }
+}
+@keyframes slideOut {
+  0% {
+    height: 30vh;
+  }
+  100% {
+    height: 0vh;
+  }
+}
+@keyframes link {
+  0% {
+    opacity: 0;
+    transform: translateY(-105px) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
+  }
+}

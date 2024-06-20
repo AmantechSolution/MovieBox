@@ -1,1 +1,27 @@
-@import "_Colors&Variable.scss", "_Home.scss", "_header.scss";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "_Colors&Variable.scss", "_Home.scss", "_trending.scss",
+  "_carousel.scss", "_TabSwitch.scss", "_footer.scss", "_detail.scss",
+  "_video.scss", "_cast.scss", "_VideoSection.scss", "_Spiner.scss",
+  "_movieCard.scss", "_searchReasult.scss", "_nav.scss", "_Explore.scss",
+  "_PageNot.scss";
+@import "../../../node_modules/locomotive-scroll/dist/locomotive-scroll";
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Raleway", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400 !important;
+}
+html[data-scroll-orientation="horizontal"] {
+  body {
+    width: fit-content !important;
+    width: -moz-fit-content !important;
+  }
+  [data-scroll-container] {
+    display: flex !important;
+    display: -moz-flex !important;
+  }
+}

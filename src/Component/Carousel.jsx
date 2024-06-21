@@ -69,14 +69,14 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           //onSlideChange={() => console.log("slide change")}
         >
           {!loading ? (
-            data?.map((item, i) => {
+            data?.map((item, index) => {
               const carouselImg = item.poster_path
                 ? url.Poster + item.poster_path
                 : Posterfalback;
 
               return (
                 <SwiperSlide
-                  key={item.id}
+                  key={index}
                   onClick={() =>
                     navigate(`/${item.media_type || endpoint}/${item.id}`)
                   }

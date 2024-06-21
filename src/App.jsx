@@ -47,6 +47,7 @@ function App() {
 
     dispatch(getGenres(allGenres));
   };
+
   return (
     <>
       <BrowserRouter>

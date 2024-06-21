@@ -1,11 +1,11 @@
 @import "_mixin.scss";
 .explorePage {
-  background: $darkBlue;
+  background: var(--backgroundClr);
   min-height: 700px;
   padding-top: 100px;
   .resultNotFound {
     font-size: 24px;
-    color: var(--black-light);
+    color: var(--textclr);
   }
   .pageHeader {
     display: flex;
@@ -19,7 +19,7 @@
   .pageTitle {
     font-size: 24px;
     line-height: 34px;
-    color: white;
+    color: var(--textClr);
     margin-bottom: 20px;
     @include md {
       margin-bottom: 0;
@@ -52,12 +52,12 @@
         // border: 0;
         outline: 0;
         box-shadow: none;
-        background-color: $darkBlue;
+        background-color: var(--backgroundClr);
         border-radius: 20px;
         .react-select__value-container {
           .react-select__placeholder,
           .react-select__input-container {
-            color: white;
+            color: var(--textClr);
             margin: 0 10px;
           }
         }

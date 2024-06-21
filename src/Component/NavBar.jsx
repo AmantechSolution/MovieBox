@@ -4,6 +4,9 @@ import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
+import Sun from "./Sun";
+import Moon from "./Moon";
+import DarkMode from "./DarkMode";
 
 const NavBar = () => {
   const [show, setShow] = useState("top");
@@ -61,10 +64,10 @@ const NavBar = () => {
               <li className="menuItem">
                 <a onClick={() => handleNav("tv")}>Tv Show</a>
               </li>
-              <li className="menuItem">
+              <li className="menuItem d-none d-md-flex">
                 <HiOutlineSearch onClick={openSearch} />
               </li>
-              <li></li>
+              <li>{/* <DarkMode /> */}</li>
             </ul>
             <div className="mobileMenuItems">
               <HiOutlineSearch onClick={openSearch} />

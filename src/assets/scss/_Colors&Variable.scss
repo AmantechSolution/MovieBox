@@ -7,6 +7,41 @@ $darkClr: #14202e;
 $title: 90px;
 $gradient: linear-gradient(to left, $lightblue, $primaryClr, $lightblue);
 $gradient1: linear-gradient(-180deg, $darkBlue, $darkClr, $darkBlue);
+
+.light-mode {
+  --primaryCLR: #2e8bc0;
+  --primaryDark: #145da0;
+  --darkBlue: #0c2d48;
+  --backgroundClr: #feffff;
+  --backgroundGradient: linear-gradient(
+    180deg,
+    rgba(216, 231, 248, 0) 0%,
+    #feffff 79.17%
+  );
+  --textClr: #14202e;
+  --secDark: #eeeeeec9;
+  --DarkCLR: #0c2d48;
+  --Box: #131313b9;
+  --filterBox: rgba(59, 59, 59, 0.25);
+}
+
+.dark-mode {
+  --primaryCLR: #2e8bc0;
+  --primaryDark: #145da0;
+  --darkBlue: #0c2d48;
+  --backgroundClr: #0c2d48;
+  --backgroundGradient: linear-gradient(
+    180deg,
+    rgba(20, 32, 46, 0) 0%,
+    #0c2d48 79.17%
+  );
+  --textClr: #f6f4f4;
+  --secDark: #eeeeeec9;
+  --DarkCLR: #3b3b3b;
+  --Box: #131313b9;
+  --filterBox: rgba(59, 59, 59, 0.25);
+}
+
 @mixin PrimaryBtn($clr, $back, $hover) {
   background: $back;
   padding: 12px 35px;

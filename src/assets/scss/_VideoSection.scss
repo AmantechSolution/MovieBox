@@ -1,6 +1,6 @@
 @import "_mixin.scss";
 #videos {
-  background: $darkBlue;
+  background: var(--backgroundClr);
   height: 100%;
   padding: 1% 0;
   overflow-x: hidden;
@@ -10,7 +10,7 @@
   margin-bottom: 50px;
   .sectionHeading {
     font-size: 24px;
-    color: white;
+    color: var(--text-clr);
     margin-bottom: 25px;
   }
   .videos {

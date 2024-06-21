@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Img from "./Img";
 import SearchBox from "./SearchBox";
 import LocomotiveScroll from "locomotive-scroll";
+
 const HomeBanner = () => {
   const locomotiveScroll = new LocomotiveScroll();
   const Img_url = "https://image.tmdb.org/t/p/original";

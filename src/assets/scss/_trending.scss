@@ -1,10 +1,10 @@
 #carousel_section {
-  background: $gradient1;
+  background: var(--backgroundClr);
   @include Display(flex-end, flex-start);
   padding: 5% 0;
   min-height: max-content;
   h1 {
-    color: $lightClr;
+    color: var(--textClr);
     display: inline-block;
   }
 }

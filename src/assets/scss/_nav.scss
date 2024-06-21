@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
     span {
-      color: $lightClr;
+      color: var(--textClr);
       font-weight: 600;
       font-size: 18px;
     }
@@ -59,7 +59,7 @@
       display: flex;
       align-items: center;
       margin: 0 15px;
-      color: $lightClr;
+      color: var(--textClr);
       font-weight: 600;
       position: relative;
       &.searchIcon {
@@ -140,7 +140,7 @@
   .searchBar {
     width: 100%;
     height: 60px;
-    background-color: white;
+    background-color: var(--textClr);
     position: absolute;
     top: 70px;
     left: 0;
@@ -157,11 +157,13 @@
         flex-shrink: 0;
         margin-left: 10px;
         cursor: pointer;
+        color: var(--backgroundClr);
       }
       input {
+        color: var(--backgroundClr) !important;
         width: 100%;
         height: 50px;
-        background-color: white;
+        background-color: var(--textClr);
         outline: 0;
         border: 0;
         border-radius: 30px 0 0 30px;

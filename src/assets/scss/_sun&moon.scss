@@ -1,0 +1,60 @@
+.Moon-light,
+.sun-dark {
+  border: 1px solid rgba($lightClr, 0.25);
+  background: $lightClr;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate-sun 2s linear infinite;
+  svg {
+    font-size: 20px;
+    color: $darkClr;
+  }
+}
+
+.sun-dark {
+  background: $darkClr;
+  border: 1px solid rgba($lightClr, 0.15);
+  animation: animate-moon 2s linear infinite;
+  svg {
+    color: $lightClr;
+  }
+}
+
+.Mode-btn {
+  z-index: 9;
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  border-radius: 50%;
+  box-shadow: 2px 4px 8px rgba($lightblue, 0.15);
+}
+@keyframes animate-sun {
+  0% {
+    box-shadow: 0 0 0 0 rgba($lightClr, 0.7), 0 0 0 0 rgba($lightblue, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba($lightblue, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($lightblue, 0), 0 0 0 30px rgba($lightblue, 0);
+  }
+}
+
+@keyframes animate-moon {
+  0% {
+    box-shadow: 0 0 0 0 rgba($darkClr, 0.7), 0 0 0 0 rgba($darkClr, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba($darkClr, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($darkClr, 0), 0 0 0 30px rgba($darkClr, 0);
+  }
+}

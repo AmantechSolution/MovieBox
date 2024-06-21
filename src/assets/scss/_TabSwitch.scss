@@ -1,7 +1,7 @@
 .switchingTabs {
   float: right;
-  height: 54px;
-  background-color: $lightClr;
+  height: 55px;
+  background-color: var(--textClr);
   border-radius: 50px;
   padding: 2px 5px;
   width: 220px;
@@ -16,7 +16,7 @@
       align-items: center;
       justify-content: center;
       width: 100px;
-      color: $darkClr;
+      color: var(--backgroundClr);
       text-transform: uppercase;
       font-size: 14px;
       position: relative;
@@ -28,7 +28,7 @@
       }
     }
     .movingBg {
-      height: 50px;
+      height: 48px;
       width: 110px;
       border-radius: 45px;
       background: $gradient;

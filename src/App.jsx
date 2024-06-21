@@ -12,6 +12,7 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import NavBar from "./Component/NavBar";
 import LocomotiveScroll from "locomotive-scroll";
+import DarkMode from "./Component/DarkMode";
 function App() {
   const dispatch = useDispatch();
   const locomotiveScroll = new LocomotiveScroll();
@@ -60,6 +61,7 @@ function App() {
           <Route path="/explore/:mediaType" element={<Explore />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <DarkMode />
         <Footer />
       </BrowserRouter>
     </>

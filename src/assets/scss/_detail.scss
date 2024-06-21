@@ -1,16 +1,16 @@
 @import "_mixin.scss";
 #Detailcar {
   border: 1px solid transparent;
-  background: $darkBlue;
+  background: var(--backgroundClr);
   .carouselTitle {
-    color: $lightClr;
+    color: var(--textClr);
     font-size: 30px;
     padding-bottom: 2%;
   }
 }
 .detailsBanner {
   width: 100%;
-  background-color: $darkBlue;
+  background-color: var(--backgroundClr);
   padding-top: 100px;
   //margin-bottom: 50px;
   @include md {
@@ -40,7 +40,7 @@
   .opacity-layer {
     width: 100%;
     height: 250px;
-    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+    background: var(--backgroundGradient);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -67,7 +67,7 @@
       }
     }
     .right {
-      color: white;
+      color: var(--textClr);
       .title {
         font-size: 28px;
         line-height: 40px;
@@ -97,8 +97,8 @@
           padding: 4px 8px;
           border-radius: 20px;
           display: inline-block;
-          background: $lightClr;
-          color: $darkClr;
+          background: var(--textClr);
+          color: var(--backgroundClr);
           font-size: 12px;
         }
       }
@@ -145,29 +145,29 @@
         .triangle {
           stroke-dasharray: 240;
           stroke-dashoffset: 480;
-          stroke: white;
+          stroke: var(--textClr);
           transform: translateY(0);
           transition: all 0.7s ease-in-out;
         }
         .circle {
-          stroke: white;
+          stroke: var(--textClr);
           stroke-dasharray: 650;
           stroke-dashoffset: 1300;
           transition: all 0.5s ease-in-out;
         }
         &:hover {
           .text {
-            color: $lightblue;
+            color: var(--primaryCLR);
           }
           .triangle {
             stroke-dashoffset: 0;
             opacity: 1;
-            stroke: $lightblue;
+            stroke: var(--primaryCLR);
             animation: trailorPlay 0.7s ease-in-out;
           }
           .circle {
             stroke-dashoffset: 0;
-            stroke: $lightblue;
+            stroke: var(--primaryCLR);
           }
         }
       }

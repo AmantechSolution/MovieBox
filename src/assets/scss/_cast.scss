@@ -1,6 +1,6 @@
 @import "_mixin.scss";
 #cast_section {
-  background: $darkBlue;
+  background: var(--backgroundClr);
   background-size: 110%;
   height: 100%;
   padding: 5% 0;
@@ -27,7 +27,7 @@
     }
     .listItem {
       text-align: center;
-      color: white;
+      color: var(--textClr);
       .profileImg {
         width: 125px;
         height: 125px;

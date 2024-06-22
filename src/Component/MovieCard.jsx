@@ -23,8 +23,8 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
         {fromSearch && <React.Fragment></React.Fragment>}
       </div>
       <div className="textBlock">
-        <CircleRating rating={data?.vote_average.toFixed(1)} />
-        <Genres data={data?.genre_ids.slice(0, 2)} />
+        <CircleRating rating={data?.vote_average?.toFixed(1)} />
+        <Genres data={data?.genre_ids?.slice(0, 2)} />
         <span className="title">{data?.title || data?.name}</span>
         <span className="date">
           {dayjs(data?.release_date).format("MMM D, YYYY")}
